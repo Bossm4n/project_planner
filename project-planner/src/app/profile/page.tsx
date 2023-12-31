@@ -39,9 +39,7 @@ const Profile = () => {
       getPreviousProjects.forEach((project) => {
         experienceHTMLArray.push(
           <div>
-            <Link href={project["url"]} className="hover:cursor-text">
-              {project["title"]}
-            </Link>
+            <Link href={project["url"]}>{project["title"]}</Link>
             <div>{project["shortDescription"]}</div>
           </div>
         );
