@@ -18,6 +18,12 @@ const Project = ({ params }: { params: { projectid: string } }) => {
           return <li>{task}</li>;
         })}
       </ul>
+      <ul className="mt-2">
+        <div className="text-lg">Finished Tasks:</div>
+        {exampleProjects[params.projectid].previous_tasks.map((task) => {
+          return <li>{task}</li>;
+        })}
+      </ul>
     </div>
   );
 };

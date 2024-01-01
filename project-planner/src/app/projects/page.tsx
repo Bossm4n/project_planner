@@ -9,7 +9,7 @@ const Projects = () => {
       <Navbar />
 
       {/* My Projects Banner */}
-      <div className="h-24 w-screen flex items-center justify-center border border-black ">
+      <div className="h-24 w-screen flex items-center justify-center border border-black mt-2">
         <div className="text-center text-3xl">My Projects</div>
       </div>
 

@@ -7,7 +7,7 @@ const HomePage = () => {
       <Navbar />
       <div className="mt-3">
         <div className="text-3xl">What is our plan</div>
-        <div>
+        <div className="mt-1">
           🚀 Dive into a world of endless possibilities with our groundbreaking
           platform! Welcome to a dynamic space where innovation knows no bounds
           – a hub tailored for students and engineers seeking to turn their

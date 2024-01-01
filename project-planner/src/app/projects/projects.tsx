@@ -2,8 +2,10 @@ interface IndividualProject {
   title: string;
   description: string;
   tasks_remaining: string[];
-  date_started?: string;
-  percent: number;
+  date_started: string;
+  percent: number | string;
+  collaborators: string[];
+  previous_tasks: string[];
 }
 
 interface ExampleProjects {
@@ -22,6 +24,17 @@ const exampleProjects: ExampleProjects = {
     ],
     date_started: "26/02/05",
     percent: 35,
+    collaborators: [
+      "John Doe",
+      "Jane Mary",
+      "Usha Marcellus",
+      "Isabela Tóni",
+      "Miguel Ángel",
+    ],
+    previous_tasks: [
+      "Design the project architecture.",
+      "Create a project timeline.",
+    ],
   },
   project2: {
     title: "Web Application Development",
@@ -34,6 +47,17 @@ const exampleProjects: ExampleProjects = {
     ],
     date_started: "02/05/05",
     percent: 68,
+    collaborators: [
+      "Mohammed Ahmed",
+      "Kornel Olusola",
+      "Worknesh Gulla",
+      "Aatto Eulogius",
+      "Baltazar Vedad",
+    ],
+    previous_tasks: [
+      "Gather project requirements.",
+      "Create wireframes and mockups.",
+    ],
   },
   project3: {
     title: "Mobile App for Fitness Tracking",
@@ -46,6 +70,17 @@ const exampleProjects: ExampleProjects = {
     ],
     date_started: "20/08/05",
     percent: 92,
+    collaborators: [
+      "Eden Antoni",
+      "Hecuba Dulf",
+      "Ademar Paula",
+      "Michael Oighrig,",
+      "Akanksha Shanthi",
+    ],
+    previous_tasks: [
+      "Conduct market research.",
+      "Define app functionality and features.",
+    ],
   },
   project4: {
     title: "Data Visualization Dashboard",
@@ -58,6 +93,14 @@ const exampleProjects: ExampleProjects = {
     ],
     date_started: "22/08/05",
     percent: 47,
+    collaborators: [
+      "Anita Ramzan,",
+      "Ida Alon",
+      "Amon-Ra Ernst",
+      "Senna Saima",
+      "Chandrashekhar Gwenda",
+    ],
+    previous_tasks: ["Collect and clean data.", "Create initial wireframes."],
   },
 };
 
