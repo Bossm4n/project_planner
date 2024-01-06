@@ -39,7 +39,7 @@ function loginFunc(newData: User, fromSignUp: boolean) {
 
       writeFile(
         "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/current_session.json",
-        JSON.stringify({ session: true, ...finalData }, null, 2),
+        JSON.stringify({ session: true, id: finalData["id"] }, null, 2),
         "utf-8"
       );
     })
