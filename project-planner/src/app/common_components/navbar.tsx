@@ -1,7 +1,7 @@
-"use server";
 import React from "react";
 import Link from "next/link";
-import { readFile } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
+import Logout from "./logout";
 
 const Navbar = async () => {
   const currentSessionPath =
@@ -14,12 +14,14 @@ const Navbar = async () => {
       const currentSessionData: { session: boolean; id?: number } =
         JSON.parse(currentSessionJSON);
 
-      console.log(currentSessionData.session);
       if (currentSessionData.session == true) activeSession = true;
     }
   );
 
-  // activeSession = false;
+  const HandleLogout2 = async () => {
+    "use server";
+    await writeFile(currentSessionPath, JSON.stringify({ session: false }));
+  };
 
   const navbarArray = activeSession
     ? ["Home", "Search", "Profile", "Projects", "Logout"]
@@ -29,16 +31,27 @@ const Navbar = async () => {
     <div className="flex flex-row space-x-10 mt-2">
       <div className="basis-3/4">Logo</div>
       {navbarArray.map((link: string) => {
-        return (
-          <div className="basis-1/12 hover:text-zinc-700" key={link}>
-            <Link
-              className="whitespace-nowrap"
-              href={`../${link.toLowerCase()}`}
-            >
-              {link}
-            </Link>
-          </div>
-        );
+        let hreflink: string = `../${link.toLowerCase()}`;
+
+        if (link == "Logout")
+          return (
+            <Logout
+              currentSessionPath={currentSessionPath}
+              writeFileFucntion={HandleLogout2}
+            />
+          );
+        else {
+          return (
+            <div className="basis-1/12 hover:text-zinc-700" key={link}>
+              <Link
+                className="whitespace-nowrap"
+                href={link != "Logout" ? hreflink : "../home"}
+              >
+                {link}
+              </Link>
+            </div>
+          );
+        }
       })}
     </div>
   );

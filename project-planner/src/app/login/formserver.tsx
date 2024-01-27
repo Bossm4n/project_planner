@@ -1,5 +1,7 @@
 "use server";
+import { sign } from "crypto";
 import { readFile, writeFile } from "fs/promises";
+import { redirect } from "next/navigation";
 
 interface User {
   id?: number;
@@ -8,7 +10,7 @@ interface User {
   email?: string;
 }
 
-function loginFunc(newData: User, fromSignUp: boolean) {
+async function loginFunc(newData: User, fromSignUp: boolean) {
   // Read the JSON file
 
   const filePath =
@@ -46,16 +48,8 @@ function loginFunc(newData: User, fromSignUp: boolean) {
     .catch((error) => {
       console.error("Error reading file:", error);
     });
+
+  redirect("/home");
 }
 
 export default loginFunc;
-
-// Read the JSON file
-// const filePath = "path/to/your/file.json";
-// const jsonData = JSON.parse(readFileSync(filePath, "utf-8"));
-
-// // Modify the JSON data
-// jsonData.key = "new value";
-
-// // Write the updated JSON data back to the file
-// writeFileSync(filePath, JSON.stringify(jsonData, null, 2), "utf-8");

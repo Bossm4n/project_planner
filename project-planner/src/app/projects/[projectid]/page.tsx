@@ -1,8 +1,10 @@
+"use server";
 import Navbar from "@/app/common_components/navbar";
 import React from "react";
 import exampleProjects from "../projects";
 
 const Project = ({ params }: { params: { projectid: string } }) => {
+  console.log(params.projectid);
   return (
     <div>
       <Navbar />
