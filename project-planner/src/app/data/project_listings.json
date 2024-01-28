@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Sustainable Water Solutions for Arid Environments",
+    "description": "Design and develop a compact and energy-efficient solar-powered water desalination system for remote and arid regions.",
+    "categories": [
+      "electrical_engineering",
+      "mechanical_engineering",
+      "civil_engineering",
+      "architecture"
+    ]
+  },
+  {
+    "title": "Smart Home Energy Management System",
+    "description": "Explore cutting-edge electrical engineering in our 6-month project: 'Smart Home Energy Management System,' integrating IoT, machine learning, and renewable for efficient consumption and sustainability.",
+    "categories": ["machine_learning", "data_science", "mechanical_engineering"]
+  },
+  {
+    "title": "Coding Education through Online Collaboration",
+    "description": " Create a web-based learning platform called 'CodePilot' for collaborative coding exercises, offering real-time feedback, shared challenges, and personalized analytics for students and educators.",
+    "categories": ["software_engineering", "web_development", "data_science"]
+  },
+  {
+    "title": "Renewable Energy Integration in Urban Landscapes",
+    "description": "Develop innovative solutions for integrating renewable energy sources such as solar panels and wind turbines into urban environments, focusing on maximizing energy production and aesthetic appeal.",
+    "categories": [
+      "electrical_engineering",
+      "civil_engineering",
+      "architecture"
+    ]
+  },
+  {
+    "title": "Healthcare Monitoring Wearable Technology",
+    "description": "Design and prototype a wearable device equipped with sensors for real-time health monitoring, aiming to revolutionize personal healthcare management and early disease detection.",
+    "categories": ["electrical_engineering", "biomedical_engineering"]
+  },
+  {
+    "title": "Blockchain-based Supply Chain Transparency",
+    "description": "Implement a blockchain solution to enhance transparency and traceability in supply chains, ensuring ethical sourcing, reducing counterfeit goods, and promoting fair labor practices.",
+    "categories": [
+      "software_engineering",
+      "blockchain_technology",
+      "supply_chain_management",
+      "data_security"
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { readFile, writeFile } from "fs/promises";
-import Logout from "./logout";
+import Logout from "./navbarlogoutclient";
 
 const Navbar = async () => {
   const currentSessionPath =
@@ -34,12 +34,7 @@ const Navbar = async () => {
         let hreflink: string = `../${link.toLowerCase()}`;
 
         if (link == "Logout")
-          return (
-            <Logout
-              currentSessionPath={currentSessionPath}
-              writeFileFucntion={HandleLogout2}
-            />
-          );
+          return <Logout writeFileFucntion={HandleLogout2} />;
         else {
           return (
             <div className="basis-1/12 hover:text-zinc-700" key={link}>
