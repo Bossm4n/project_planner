@@ -25,7 +25,9 @@ const Search = () => {
         <div className="flex flex-row">
           {/* Categories section */}
           <div className="basis-1/3 flex-grow bg-red-50 p-1">
-            <div>Categories</div>
+            <div data-categories-active="" id="categories">
+              Categories
+            </div>
             <div className="bg-red-200">
               {categories.listing_categories.map((category) => {
                 const formattedCategory = category
