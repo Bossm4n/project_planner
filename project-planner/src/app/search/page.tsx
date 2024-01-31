@@ -21,7 +21,48 @@ const Search = () => {
     <div>
       <Navbar />
       <div className="mt-3">
-        <div>Search ...</div>
+        {/* Pop up */}
+        <div className="bg-gray-200">
+          <div className="flex flex-row justify-between">
+            <div>Create a listing</div>
+            <div>x</div>
+          </div>
+          <form action="submit">
+            <label htmlFor="title">Project Title</label>
+            <br />
+            <input type="text" name="title" />
+            <br />
+            <label htmlFor="title">Project Title</label>
+            <br />
+            <input type="text" name="title" />
+          </form>
+          <div>
+            <label htmlFor="categories">Choose Categories:</label>
+            <br />
+            <select name="categories" id="categoriesSelect" multiple>
+              <option value="softwareEngineering">Software Engineering</option>
+              <option value="ds">Data Science</option>
+              <option value="a">Architecture</option>
+              <option value="da">Data Analysis</option>
+              <option value="me">Mechancical</option>
+            </select>
+            <br />
+          </div>
+        </div>
+
+        {/* Create a listing */}
+        <div>
+          <div>Create a listing</div>
+          <div className="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            optio ex aspernatur corporis debitis eaque nulla ut veniam iure
+            assumenda nobis.
+          </div>
+          <div className="flex justify-end">
+            <button className="mr-3 border p-1 -m-1 rounded-lg">Create</button>
+          </div>
+        </div>
+
         <div className="flex flex-row">
           {/* Categories section */}
           <div className="basis-1/3 flex-grow bg-red-50 p-1">
@@ -49,6 +90,7 @@ const Search = () => {
           <div className="basis-2/3 space-y-2" id="listings">
             <div>Listings</div>
 
+            {/* Maps each listing from the database to its own individual element */}
             {listings.map((listing) => {
               return (
                 <div

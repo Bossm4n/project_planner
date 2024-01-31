@@ -28,7 +28,7 @@ const Navbar = async () => {
     : ["Home", "Search", "Login"];
 
   return (
-    <div className="flex flex-row space-x-10 mt-2">
+    <div className="flex flex-row space-x-10 mt-2 bg-fuchsia-100">
       <div className="basis-3/4">Logo</div>
       {navbarArray.map((link: string) => {
         let hreflink: string = `../${link.toLowerCase()}`;
