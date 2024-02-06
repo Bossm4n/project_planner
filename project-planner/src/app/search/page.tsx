@@ -1,9 +1,10 @@
 "use server";
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../common_components/navbar";
 import projectListings from "../data/project_listings.json";
 import projectListingCategories from "../data/project_listing_categories.json";
 import ListingsClient from "./listingsclient";
+import PopUpClient from "./popupclient";
 
 interface Listing {
   title: string;
@@ -17,37 +18,38 @@ const Search = () => {
 
   const listings: Listing[] = projectListings;
 
+  const categories2: string[] = [
+    "Software Engineering",
+    "Data Science",
+    "Architecture",
+    "Data Analysis",
+    "Mechanical Engineering",
+  ];
+
   return (
     <div>
       <Navbar />
       <div className="mt-3">
         {/* Pop up */}
-        <div className="bg-gray-200">
+        <div className="bg-gray-200 p-1">
           <div className="flex flex-row justify-between">
             <div>Create a listing</div>
-            <div>x</div>
+            <div>X</div>
           </div>
-          <form action="submit">
+          <form action="">
             <label htmlFor="title">Project Title</label>
             <br />
             <input type="text" name="title" />
             <br />
-            <label htmlFor="title">Project Title</label>
+            <label htmlFor="title">Project Description</label>
             <br />
             <input type="text" name="title" />
+            <div>
+              <div>Choose Categories:</div>
+              <PopUpClient />
+            </div>
+            <button type="submit">Submit</button>
           </form>
-          <div>
-            <label htmlFor="categories">Choose Categories:</label>
-            <br />
-            <select name="categories" id="categoriesSelect" multiple>
-              <option value="softwareEngineering">Software Engineering</option>
-              <option value="ds">Data Science</option>
-              <option value="a">Architecture</option>
-              <option value="da">Data Analysis</option>
-              <option value="me">Mechancical</option>
-            </select>
-            <br />
-          </div>
         </div>
 
         {/* Create a listing */}
