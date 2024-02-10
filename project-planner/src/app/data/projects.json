@@ -1,0 +1,203 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "projects": {
+        "project1": {
+          "title": "ML for strawberry growth",
+          "description": "Use machine learning to optimize strawberry growth.",
+          "tasks_remaining": [
+            "Research existing ML models for plant growth.",
+            "Collect data on strawberry growth conditions.",
+            "Train a machine learning model.",
+            "Implement the model in a controlled environment."
+          ],
+          "date_started": "26/02/05",
+          "percent": 35,
+          "collaborators": [
+            "John Doe",
+            "Jane Mary",
+            "Usha Marcellus",
+            "Isabela Tóni",
+            "Miguel Ángel"
+          ],
+          "previous_tasks": [
+            "Design the project architecture.",
+            "Create a project timeline."
+          ]
+        },
+        "project2": {
+          "title": "Web Application Development",
+          "description": "Build a modern web application for project management.",
+          "tasks_remaining": [
+            "Design the user interface and user experience.",
+            "Implement the frontend using React.",
+            "Develop the backend using Node.js and Express.",
+            "Integrate with a database for data storage."
+          ],
+          "date_started": "02/05/05",
+          "percent": 68,
+          "collaborators": [
+            "Mohammed Ahmed",
+            "Kornel Olusola",
+            "Worknesh Gulla",
+            "Aatto Eulogius",
+            "Baltazar Vedad"
+          ],
+          "previous_tasks": [
+            "Gather project requirements.",
+            "Create wireframes and mockups."
+          ]
+        },
+        "project3": {
+          "title": "Mobile App for Fitness Tracking",
+          "description": "Create a mobile app to track and monitor fitness activities.",
+          "tasks_remaining": [
+            "Design the app interface for iOS and Android.",
+            "Implement features for tracking workouts and nutrition.",
+            "Integrate with health data APIs for additional insights.",
+            "Test the app on various devices and platforms."
+          ],
+          "date_started": "20/08/05",
+          "percent": 92,
+          "collaborators": [
+            "Eden Antoni",
+            "Hecuba Dulf",
+            "Ademar Paula",
+            "Michael Oighrig,",
+            "Akanksha Shanthi"
+          ],
+          "previous_tasks": [
+            "Conduct market research.",
+            "Define app functionality and features."
+          ]
+        },
+        "project4": {
+          "title": "Data Visualization Dashboard",
+          "description": "Develop a dashboard for visualizing data analytics.",
+          "tasks_remaining": [
+            "Design interactive charts and graphs.",
+            "Implement data visualization components using D3.js.",
+            "Connect the dashboard to a data source.",
+            "Optimize performance for large datasets."
+          ],
+          "date_started": "22/08/05",
+          "percent": 47,
+          "collaborators": [
+            "Anita Ramzan,",
+            "Ida Alon",
+            "Amon-Ra Ernst",
+            "Senna Saima",
+            "Chandrashekhar Gwenda"
+          ],
+          "previous_tasks": [
+            "Collect and clean data.",
+            "Create initial wireframes."
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "projects": {
+        "project1": {
+          "title": "AI-driven Language Translation",
+          "description": "Develop an AI-powered language translation system.",
+          "tasks_remaining": [
+            "Research natural language processing techniques.",
+            "Collect multilingual datasets for training.",
+            "Train the language translation model.",
+            "Integrate the model into a user-friendly application."
+          ],
+          "date_started": "10/03/06",
+          "percent": 55,
+          "collaborators": [
+            "Elena Rosario",
+            "Raj Patel",
+            "Yuki Tanaka",
+            "Olga Kowalski",
+            "Diego Gonzalez"
+          ],
+          "previous_tasks": [
+            "Define project scope and requirements.",
+            "Create a project roadmap."
+          ]
+        },
+        "project2": {
+          "title": "E-commerce Platform Enhancement",
+          "description": "Improve and add features to an existing e-commerce platform.",
+          "tasks_remaining": [
+            "Enhance the product search and filtering functionality.",
+            "Implement a secure payment gateway.",
+            "Optimize the platform for mobile devices.",
+            "Conduct usability testing and gather feedback."
+          ],
+          "date_started": "05/07/06",
+          "percent": 72,
+          "collaborators": [
+            "Luisa Morales",
+            "Javier Rodriguez",
+            "Aisha Malik",
+            "Sven Bergstrom",
+            "Mia Kim"
+          ],
+          "previous_tasks": [
+            "Audit the current platform.",
+            "Identify areas for improvement."
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "projects": {
+        "project1": {
+          "title": "Cybersecurity Awareness Training",
+          "description": "Develop an online training program for cybersecurity awareness.",
+          "tasks_remaining": [
+            "Create engaging multimedia content for training modules.",
+            "Implement an interactive quiz system.",
+            "Integrate with a learning management system (LMS).",
+            "Monitor user progress and provide certificates upon completion."
+          ],
+          "date_started": "15/01/07",
+          "percent": 40,
+          "collaborators": [
+            "Samantha Chang",
+            "Andre Oliveira",
+            "Marina Petrov",
+            "Ali Al-Farsi",
+            "Julia Winters"
+          ],
+          "previous_tasks": [
+            "Define learning objectives and target audience.",
+            "Develop a storyboard for training modules."
+          ]
+        },
+        "project2": {
+          "title": "Smart Home Automation",
+          "description": "Create a smart home system for automation and control.",
+          "tasks_remaining": [
+            "Develop a user-friendly mobile app for control.",
+            "Integrate with smart devices and appliances.",
+            "Implement voice control using natural language processing.",
+            "Test the system in various home environments."
+          ],
+          "date_started": "20/04/07",
+          "percent": 65,
+          "collaborators": [
+            "Carlos Mendez",
+            "Sophie Johnson",
+            "Ravi Kapoor",
+            "Fatemeh Amini",
+            "Antonio Costa"
+          ],
+          "previous_tasks": [
+            "Research smart home technologies.",
+            "Define the system architecture."
+          ]
+        }
+      }
+    }
+  ]
+}
