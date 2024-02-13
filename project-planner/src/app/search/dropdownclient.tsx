@@ -1,8 +1,11 @@
 "use client";
-import React from "react";
-import PopUpBackend from "./popupbackend";
+import React, { useState } from "react";
+import DropdownBackend from "./dropdownbackend";
 
-const PopUpClient = () => {
+const DropdownClient = () => {
+  const [selectedCategories, setSelectedCategories] = useState("");
+
+  // Drops down the categories menu and allows for the catgories to be selected
   const onClickPopUp = (e: React.MouseEvent<HTMLDivElement>) => {
     const checkedCategories: string[] = [];
 
@@ -17,14 +20,14 @@ const PopUpClient = () => {
       }
     });
 
-    categoriesDropDown.dataset["selectedCategories"] =
-      checkedCategories.join(",");
+    setSelectedCategories(checkedCategories.join(","));
 
     categoriesDropDown.classList.toggle("hidden");
   };
 
   return (
     <div>
+      <input type="hidden" name="dropdownData" value={selectedCategories} />
       <div className="flex flex-row justify-between text-sm">
         <div>Select</div>
         <div onClick={onClickPopUp}>x</div>
@@ -32,12 +35,11 @@ const PopUpClient = () => {
       <div
         className="overflow-hidden h-40 overflow-y-scroll"
         id="popupCategories"
-        data-selectedCategories=""
       >
-        <PopUpBackend />
+        <DropdownBackend />
       </div>
     </div>
   );
 };
 
-export default PopUpClient;
+export default DropdownClient;

@@ -1,15 +1,16 @@
 "use server";
-import React, { useRef } from "react";
+import React from "react";
 import Navbar from "../common_components/navbar";
 import projectListings from "../data/project_listings.json";
 import projectListingCategories from "../data/project_listing_categories.json";
 import ListingsClient from "./listingsclient";
-import PopUpClient from "./popupclient";
+import PopUp from "./popup";
 
 interface Listing {
-  title: string;
-  description: string;
-  categories?: string[];
+  projectTitle: string;
+  projectDescription: string;
+  projectCategories?: string[];
+  id: number;
 }
 
 const Search = () => {
@@ -17,14 +18,6 @@ const Search = () => {
   const categories: { listing_categories: string[] } = projectListingCategories;
 
   const listings: Listing[] = projectListings;
-
-  const categories2: string[] = [
-    "Software Engineering",
-    "Data Science",
-    "Architecture",
-    "Data Analysis",
-    "Mechanical Engineering",
-  ];
 
   return (
     <div>
@@ -36,20 +29,7 @@ const Search = () => {
             <div>Create a listing</div>
             <div>X</div>
           </div>
-          <form action="">
-            <label htmlFor="title">Project Title</label>
-            <br />
-            <input type="text" name="title" />
-            <br />
-            <label htmlFor="title">Project Description</label>
-            <br />
-            <input type="text" name="title" />
-            <div>
-              <div>Choose Categories:</div>
-              <PopUpClient />
-            </div>
-            <button type="submit">Submit</button>
-          </form>
+          <PopUp />
         </div>
 
         {/* Create a listing */}
@@ -97,13 +77,13 @@ const Search = () => {
               return (
                 <div
                   className="border border-black p-2 flex flex-col"
-                  data-categories={listing.categories}
+                  data-categories={listing.projectCategories}
                 >
                   <div>
-                    Project Title: <b>{listing.title}</b>
+                    Project Title: <b>{listing.projectTitle}</b>
                   </div>
                   <div className="flex flex-col">
-                    <div>{listing.description}</div>
+                    <div>{listing.projectDescription}</div>
                     <div className="self-end mr-2 bg-blue-600 p-1 rounded-md text-cyan-500 hover:text-cyan-400 hover:bg-blue-700">
                       Join
                     </div>
