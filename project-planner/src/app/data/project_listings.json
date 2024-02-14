@@ -8,7 +8,8 @@
       "civil_engineering",
       "architecture"
     ],
-    "id": 1
+    "id": 1,
+    "listing_active": true
   },
   {
     "projectTitle": "Smart Home Energy Management System",
@@ -18,7 +19,8 @@
       "data_science",
       "mechanical_engineering"
     ],
-    "id": 2
+    "id": 2,
+    "listing_active": true
   },
   {
     "projectTitle": "Coding Education through Online Collaboration",
@@ -28,7 +30,8 @@
       "web_development",
       "data_science"
     ],
-    "id": 3
+    "id": 3,
+    "listing_active": true
   },
   {
     "projectTitle": "Renewable Energy Integration in Urban Landscapes",
@@ -38,16 +41,15 @@
       "civil_engineering",
       "architecture"
     ],
-    "id": 4
+    "id": 4,
+    "listing_active": true
   },
   {
     "projectTitle": "Healthcare Monitoring Wearable Technology",
     "projectDescription": "Design and prototype a wearable device equipped with sensors for real-time health monitoring, aiming to revolutionize personal healthcare management and early disease detection.",
-    "projectCategories": [
-      "electrical_engineering",
-      "biomedical_engineering"
-    ],
-    "id": 5
+    "projectCategories": ["electrical_engineering", "biomedical_engineering"],
+    "id": 5,
+    "listing_active": true
   },
   {
     "projectTitle": "Blockchain-based Supply Chain Transparency",
@@ -58,7 +60,8 @@
       "supply_chain_management",
       "data_security"
     ],
-    "id": 6
+    "id": 6,
+    "listing_active": true
   },
   {
     "projectTitle": "Cool projcet title 7",
@@ -69,6 +72,7 @@
       "mechanical_engineering",
       "electrical_engineering"
     ],
-    "id": 7
+    "id": 7,
+    "listing_active": true
   }
 ]
