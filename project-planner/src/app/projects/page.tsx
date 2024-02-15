@@ -1,9 +1,39 @@
+"use server";
 import React from "react";
 import Navbar from "../common_components/navbar";
 import Link from "next/link";
+import { readFile } from "fs/promises";
 import exampleProjects from "./projects";
 
-const Projects = () => {
+const Projects = async () => {
+  const activeSessionFile =
+    "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/current_session.json";
+
+  let activeSession: boolean = false;
+
+  interface activeSessionObject {
+    session: boolean;
+    id: number;
+  }
+
+  await readFile(activeSessionFile, "utf-8")
+    .then((json) => JSON.parse(json))
+    .then((activeSessionJSON: activeSessionObject) => {
+      console.log(activeSessionJSON.session == false);
+      if (activeSessionJSON.session == false) activeSession = true;
+      console.log("active dession:" + activeSession);
+    })
+    .catch((error) => console.error("Error: " + error));
+
+  if (activeSession) {
+    return (
+      <div>
+        <Navbar />
+        Error 404
+      </div>
+    );
+  }
+
   return (
     <div>
       <Navbar />

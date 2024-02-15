@@ -4,73 +4,139 @@
       "id": 1,
       "username": "user1",
       "password": "password1",
-      "email": "user1@example.com"
+      "email": "user1@example.com",
+      "intro": "Intro 1",
+      "experience": [
+        {
+          "experience": "Experience 1",
+          "experienceDescription": "Tempor elit exercitation consectetur aute ea officia veniam id deserunt pariatur incididunt aute dolore. Deserunt veniam consectetur fugiat dolor sunt enim consequat qui mollit aliqua Lorem minim pariatur."
+        },
+        {
+          "experience": "Experience 2",
+          "experienceDescription": "Est non officia do in ut aliquip deserunt aliquip mollit duis tempor do nulla. Nostrud enim consequat anim reprehenderit eiusmod dolore excepteur mollit magna."
+        }
+      ],
+      "previousProjects": [
+        {
+          "title": "Project1",
+          "url": "project1",
+          "shortDescription": "Labore est Lorem voluptate anim velit esse aute culpa cillum occaecat. Magna labore ad quis sint Lorem anim est id culpa dolor."
+        },
+        {
+          "title": "Project2",
+          "url": "project2",
+          "shortDescription": "Labore nulla do ad excepteur culpa incididunt. Pariatur minim in dolore ea. Aliqua aliqua duis nulla sit adipisicing aliqua dolore enim tempor."
+        }
+      ]
     },
     {
       "id": 2,
       "username": "user2",
       "password": "password2",
-      "email": "user2@example.com"
+      "email": "user2@example.com",
+      "intro": "Intro 2",
+      "experience": [
+        {
+          "experience": "Experience 1",
+          "experienceDescription": "Tempor elit exercitation consectetur aute ea officia veniam id deserunt pariatur incididunt aute dolore. Deserunt veniam consectetur fugiat dolor sunt enim consequat qui mollit aliqua Lorem minim pariatur."
+        },
+        {
+          "experience": "Experience 2",
+          "experienceDescription": "Est non officia do in ut aliquip deserunt aliquip mollit duis tempor do nulla. Nostrud enim consequat anim reprehenderit eiusmod dolore excepteur mollit magna."
+        }
+      ],
+      "previousProjects": [
+        {
+          "title": "Project1",
+          "url": "project1",
+          "shortDescription": "Labore est Lorem voluptate anim velit esse aute culpa cillum occaecat. Magna labore ad quis sint Lorem anim est id culpa dolor."
+        },
+        {
+          "title": "Project2",
+          "url": "project2",
+          "shortDescription": "Labore nulla do ad excepteur culpa incididunt. Pariatur minim in dolore ea. Aliqua aliqua duis nulla sit adipisicing aliqua dolore enim tempor."
+        }
+      ]
     },
     {
       "id": 3,
       "username": "user3",
       "password": "password3",
-      "email": "user3@example.com"
+      "email": "user3@example.com",
+      "intro": "Intro 3",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 4,
       "username": "user4",
       "password": "password4",
-      "email": "user4@example.com"
+      "email": "user4@example.com",
+      "intro": "Intro 4",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 5,
       "username": "user5",
       "password": "password5",
-      "email": "user5@example.com"
+      "email": "user5@example.com",
+      "intro": "Intro 5",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 6,
       "username": "user6",
       "password": "password6",
-      "email": "user6@example.com"
+      "email": "user6@example.com",
+      "intro": "Intro 6",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 7,
       "username": "user7",
       "password": "password7",
-      "email": "user7@example.com"
+      "email": "user7@example.com",
+      "intro": "Intro 7",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 8,
       "username": "user8",
       "password": "password8",
-      "email": "user8@example.com"
+      "email": "user8@example.com",
+      "intro": "Intro 8",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 9,
       "username": "user9",
       "password": "password9",
-      "email": "user9@example.com"
+      "email": "user9@example.com",
+      "intro": "Intro 9",
+      "experience": ["experience 1", "experience 2"]
     },
     {
       "id": 10,
       "username": "user10",
       "password": "password10",
-      "email": "user10@example.com"
+      "email": "user10@example.com",
+      "intro": "Intro 2",
+      "experience": ["experience 1", "experience 2"]
     },
     {
+      "id": 11,
       "username": "meanbaza",
       "email": "m3anbaza21@gmail.com",
       "password": "anodnasod12A",
-      "id": 11
+      "intro": "Intro 2",
+      "experience": ["experience 1", "experience 2"]
     },
     {
+      "id": 12,
       "username": "user14",
       "email": "user14@example.com",
       "password": "Password14",
-      "id": 12
+      "intro": "Intro 2",
+      "experience": ["experience 1", "experience 2"]
     }
   ]
 }

@@ -4,7 +4,14 @@ import React from "react";
 import exampleProjects from "../projects";
 
 const Project = ({ params }: { params: { projectid: string } }) => {
-  console.log(params.projectid);
+  if (exampleProjects[params.projectid] == undefined) {
+    return (
+      <div>
+        <Navbar />
+        <div>404 Error</div>
+      </div>
+    );
+  }
   return (
     <div>
       <Navbar />
