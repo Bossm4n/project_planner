@@ -2,66 +2,46 @@ import React from "react";
 import Link from "next/link";
 import { readFile, writeFile } from "fs/promises";
 import Logout from "./navbarlogoutclient";
+import { User } from "./interfaces";
 
 const Navbar = async () => {
-  const currentSessionPath =
-    "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/current_session.json";
+  const currentSessionPath = "/src/app/data/users/current_session.json";
 
   let activeSession: boolean = false;
 
   let currID: number;
 
-  await readFile(currentSessionPath, "utf-8").then(
-    (currentSessionJSON: any) => {
+  await readFile(process.cwd() + currentSessionPath, "utf-8")
+    .then((currentSessionJSON: any) => {
+      // console.log(currentSessionJSON);
       const currentSessionData: { session: boolean; id?: number } =
         JSON.parse(currentSessionJSON);
-
-      if (currentSessionData.session == true) {
+      return currentSessionData;
+    })
+    .then((currentSession) => {
+      if (currentSession.session == true) {
         activeSession = true;
-        currID = currentSessionData.id as number;
+        currID = currentSession.id as number;
       }
-    }
-  );
+    });
 
   const HandleLogout2 = async () => {
     "use server";
     await writeFile(
-      currentSessionPath,
+      process.cwd() + currentSessionPath,
       JSON.stringify({ session: false, id: 0 })
     );
   };
 
-  let realUser: boolean = false;
-
-  interface User {
-    id: number;
-    username: string;
-    password: string;
-    email: string;
-    intro: string;
-    experience: {
-      experience: string;
-      experienceDescription: string;
-    }[];
-
-    previousProjects: {
-      title: string;
-      url: string;
-      shortDescription: string;
-    }[];
-  }
-
-  const activeSessionFile =
-    "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/users.json";
+  const activeSessionFile = "/src/app/data/users/all_users.json";
 
   let currentUser: User | null = null;
 
-  await readFile(activeSessionFile, "utf-8")
+  await readFile(process.cwd() + activeSessionFile, "utf-8")
     .then((json) => JSON.parse(json))
     .then((activeSessionJSON: { users: User[] }) => {
       activeSessionJSON.users.every((user) => {
         if (user.id == currID) {
-          realUser = true;
           currentUser = user;
           return false;
         }
@@ -70,10 +50,12 @@ const Navbar = async () => {
     })
     .catch((error) => console.error("Error: " + error));
 
+  // console.log(currentUser);
+
   if (currentUser == null) {
-    return;
+    activeSession = false;
   }
-  currentUser = currentUser as User;
+  currentUser = currentUser as unknown as User;
 
   const navbarArray = activeSession
     ? ["Home", "Search", "Profile", "Projects", "Logout"]

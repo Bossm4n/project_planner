@@ -1,8 +1,9 @@
 import React from "react";
 import DropdownClient from "./dropdownclient";
 import { readFile, writeFile } from "fs/promises";
+import { ProjectListing } from "@/app/common_components/interfaces";
 
-const PopUp = async () => {
+const ListingPopUp = async () => {
   async function formAction(popupFormData: FormData) {
     "use server";
 
@@ -20,16 +21,9 @@ const PopUp = async () => {
     };
 
     const projectListingsFile =
-      "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/project_listings.json";
+      "/src/app/data/projects_data/listed_projects.json";
 
-    interface ProjectListing {
-      projectTitle: string;
-      projectDescription: string;
-      projectCategories: string[];
-      id?: number;
-    }
-
-    readFile(projectListingsFile, "utf-8")
+    readFile(process.cwd() + projectListingsFile, "utf-8")
       .then((allProjectListingsData) => {
         const allProjectListings: ProjectListing[] = JSON.parse(
           allProjectListingsData
@@ -89,7 +83,7 @@ const PopUp = async () => {
         console.log(allProjectListings);
 
         writeFile(
-          projectListingsFile,
+          process.cwd() + projectListingsFile,
           JSON.stringify(allProjectListings, null, 2),
           "utf-8"
         );
@@ -117,4 +111,4 @@ const PopUp = async () => {
   );
 };
 
-export default PopUp;
+export default ListingPopUp;

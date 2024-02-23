@@ -1,10 +1,11 @@
 "use server";
 import React from "react";
 import Navbar from "../common_components/navbar";
-import projectListings from "../data/project_listings.json";
-import projectListingCategories from "../data/project_listing_categories.json";
-import ListingsClient from "./listingsclient";
-import PopUp from "./popup";
+import projectListings from "../data/project_data/listed_projects.json";
+import projectListingCategories from "../data/project_data/project_listing_categories.json";
+import ListingsClient from "./listings_client";
+import ListingPopUp from "./popup/listing_popup";
+import Join from "./join_project_client";
 
 interface Listing {
   projectTitle: string;
@@ -29,7 +30,7 @@ const Search = () => {
             <div>Create a listing</div>
             <div>X</div>
           </div>
-          <PopUp />
+          <ListingPopUp />
         </div>
 
         {/* Create a listing */}
@@ -73,7 +74,7 @@ const Search = () => {
             <div>Listings</div>
 
             {/* Maps each listing from the database to its own individual element */}
-            {listings.map((listing) => {
+            {listings.map((listing, i) => {
               return (
                 <div
                   className="border border-black p-2 flex flex-col"
@@ -84,9 +85,7 @@ const Search = () => {
                   </div>
                   <div className="flex flex-col">
                     <div>{listing.projectDescription}</div>
-                    <div className="self-end mr-2 bg-blue-600 p-1 rounded-md text-cyan-500 hover:text-cyan-400 hover:bg-blue-700">
-                      Join
-                    </div>
+                    <Join id={listing.id} />
                   </div>
                 </div>
               );

@@ -2,34 +2,16 @@ import React, { ReactNode } from "react";
 import Navbar from "../common_components/navbar";
 import Link from "next/link";
 import { readFile } from "fs/promises";
-import { GetServerSideProps } from "next";
+import { User } from "../common_components/interfaces";
 
 const Profile = async ({ params }: { params: { user: string } }) => {
-  const activeSessionFile =
-    "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/users.json";
+  const allUsersFile = "/src/app/data/users/all_users.json";
 
   let realUser: boolean = false;
 
-  interface User {
-    id: number;
-    username: string;
-    password: string;
-    email: string;
-    intro: string;
-    experience: {
-      experience: string;
-      experienceDescription: string;
-    }[];
-
-    previousProjects: {
-      title: string;
-      url: string;
-      shortDescription: string;
-    }[];
-  }
   let currentUser: User | null = null;
 
-  await readFile(activeSessionFile, "utf-8")
+  await readFile(process.cwd() + allUsersFile, "utf-8")
     .then((json) => JSON.parse(json))
     .then((activeSessionJSON: { users: User[] }) => {
       activeSessionJSON.users.every((user) => {
@@ -42,6 +24,8 @@ const Profile = async ({ params }: { params: { user: string } }) => {
       });
     })
     .catch((error) => console.error("Error: " + error));
+
+  console.log(realUser);
 
   if (!realUser || currentUser == null) {
     return (
@@ -56,14 +40,17 @@ const Profile = async ({ params }: { params: { user: string } }) => {
   console.log(currentUser);
 
   const previousProjectsHTML = () => {
-    if (currentUser?.previousProjects.length == 0) {
+    if (
+      currentUser?.previousProjects == undefined ||
+      currentUser?.previousProjects.length == 0
+    ) {
       return <></>;
     } else {
       const previousProjectsHTMLArray: ReactNode[] = [];
       currentUser?.previousProjects.forEach((project) => {
         previousProjectsHTMLArray.push(
           <div>
-            <Link href={project.title}>{project.title}</Link>
+            <Link href={"projects" + "/" + project.title}>{project.title}</Link>
             <div>{project.shortDescription}</div>
           </div>
         );
@@ -78,20 +65,30 @@ const Profile = async ({ params }: { params: { user: string } }) => {
   };
 
   const experienceHTML = () => {
-    if (currentUser?.experience.length == 0) {
+    if (
+      currentUser?.experience == undefined ||
+      currentUser?.experience.length == 0
+    ) {
       return <></>;
     } else {
       const experienceHTMLArray: ReactNode[] = [];
       currentUser?.experience.forEach((experience) => {
         experienceHTMLArray.push(
           <li>
-            <div>{experience.experience}:</div>
+            <div>{experience.experienceName}:</div>
             <div>{experience.experienceDescription}</div>
           </li>
         );
       });
 
-      return <>{experienceHTMLArray}</>;
+      return (
+        <>
+          <div className="text-3xl mt-2">Experience</div>
+          <ul className="flex flex-col space-y-3 mt-1">
+            {experienceHTMLArray}
+          </ul>
+        </>
+      );
     }
   };
 
@@ -120,8 +117,7 @@ const Profile = async ({ params }: { params: { user: string } }) => {
             </div>
 
             {/* Experience */}
-            <div className="text-3xl mt-2">Experience</div>
-            <ul className="flex flex-col space-y-3 mt-1">{experienceHTML()}</ul>
+            {experienceHTML()}
           </div>
           {/* Projects */}
           {previousProjectsHTML()}
@@ -139,18 +135,6 @@ const Profile = async ({ params }: { params: { user: string } }) => {
       </div>
     </div>
   );
-};
-
-export const getServerSideProps2: GetServerSideProps = async (context) => {
-  // Get the URL route from the request object
-  const route = context.req.url;
-
-  // Pass route as props to the component
-  return {
-    props: {
-      route,
-    },
-  };
 };
 
 export default Profile;

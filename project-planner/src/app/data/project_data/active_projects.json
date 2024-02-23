@@ -1,0 +1,502 @@
+[
+  {
+    "liveProjectID": 1,
+    "startDate": "01/01/2024",
+    "finishDate": "01/03/2024",
+    "projectName": "Project Name 1",
+    "projectCreator": "user1",
+    "projectUsers": ["user1", "user2", "user3"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 1",
+    "githubLink": "https://github.com/exampleuser/exampleproject",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "01/01/24",
+          "dateFinished": "01/02/24",
+          "usersOnTask": ["user1", "user3"],
+          "taskDescription": "Task Description for Task 1",
+          "verified": false
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "01/01/24",
+          "dateFinished": "15/02/24",
+          "usersOnTask": ["user1", "user2"],
+          "taskDescription": "Task Descripition for Task 2",
+          "verified": true
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "02/02/24",
+          "taskFinishDate": "21/02/24",
+          "usersOnTask": ["user1", "user2", "user3"],
+          "taskDescription": "Task Descripition for Task 3",
+          "taskCompletionStatus": 0.5
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user2", "user3"],
+          "taskDescription": "Task Descripition for Task 4",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 2,
+    "startDate": "02/01/2024",
+    "finishDate": "02/03/2024",
+    "projectName": "Project Name 2",
+    "projectCreator": "user2",
+    "projectUsers": ["user2", "user3", "user4"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 2",
+    "githubLink": "https://github.com/exampleuser/exampleproject2",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "02/01/24",
+          "dateFinished": "02/02/24",
+          "usersOnTask": ["user2", "user4"],
+          "taskDescription": "Task Description for Task 5",
+          "verified": true
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "02/01/24",
+          "dateFinished": "15/02/24",
+          "usersOnTask": ["user2", "user3"],
+          "taskDescription": "Task Description for Task 6",
+          "verified": false
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "03/02/24",
+          "taskFinishDate": "22/02/24",
+          "usersOnTask": ["user2", "user3", "user4"],
+          "taskDescription": "Task Description for Task 7",
+          "taskCompletionStatus": 0.8
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user3", "user4"],
+          "taskDescription": "Task Description for Task 8",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 3,
+    "startDate": "03/01/2024",
+    "finishDate": "03/03/2024",
+    "projectName": "Project Name 3",
+    "projectCreator": "user3",
+    "projectUsers": ["user3", "user4", "user5"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 3",
+    "githubLink": "https://github.com/exampleuser/exampleproject3",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "03/01/24",
+          "dateFinished": "03/02/24",
+          "usersOnTask": ["user3", "user5"],
+          "taskDescription": "Task Description for Task 9",
+          "verified": false
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "03/01/24",
+          "dateFinished": "16/02/24",
+          "usersOnTask": ["user3", "user4"],
+          "taskDescription": "Task Description for Task 10",
+          "verified": true
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "04/02/24",
+          "taskFinishDate": "23/02/24",
+          "usersOnTask": ["user3", "user4", "user5"],
+          "taskDescription": "Task Description for Task 11",
+          "taskCompletionStatus": 0.6
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user4", "user5"],
+          "taskDescription": "Task Description for Task 12",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 4,
+    "startDate": "04/01/2024",
+    "finishDate": "04/03/2024",
+    "projectName": "Project Name 4",
+    "projectCreator": "user4",
+    "projectUsers": ["user4", "user5", "user6"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 4",
+    "githubLink": "https://github.com/exampleuser/exampleproject4",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "04/01/24",
+          "dateFinished": "04/02/24",
+          "usersOnTask": ["user4", "user6"],
+          "taskDescription": "Task Description for Task 13",
+          "verified": true
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "04/01/24",
+          "dateFinished": "17/02/24",
+          "usersOnTask": ["user4", "user5"],
+          "taskDescription": "Task Description for Task 14",
+          "verified": false
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "05/02/24",
+          "taskFinishDate": "24/02/24",
+          "usersOnTask": ["user4", "user5", "user6"],
+          "taskDescription": "Task Description for Task 15",
+          "taskCompletionStatus": 0.7
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user5", "user6"],
+          "taskDescription": "Task Description for Task 16",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 5,
+    "startDate": "05/01/2024",
+    "finishDate": "05/03/2024",
+    "projectName": "Project Name 5",
+    "projectCreator": "user5",
+    "projectUsers": ["user5", "user6", "user7"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 5",
+    "githubLink": "https://github.com/exampleuser/exampleproject5",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "05/01/24",
+          "dateFinished": "05/02/24",
+          "usersOnTask": ["user5", "user7"],
+          "taskDescription": "Task Description for Task 17",
+          "verified": false
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "05/01/24",
+          "dateFinished": "18/02/24",
+          "usersOnTask": ["user5", "user6"],
+          "taskDescription": "Task Description for Task 18",
+          "verified": true
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "06/02/24",
+          "taskFinishDate": "25/02/24",
+          "usersOnTask": ["user5", "user6", "user7"],
+          "taskDescription": "Task Description for Task 19",
+          "taskCompletionStatus": 0.9
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user6", "user7"],
+          "taskDescription": "Task Description for Task 20",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 6,
+    "startDate": "06/01/2024",
+    "finishDate": "06/03/2024",
+    "projectName": "Project Name 6",
+    "projectCreator": "user6",
+    "projectUsers": ["user6", "user7", "user8"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 6",
+    "githubLink": "https://github.com/exampleuser/exampleproject6",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "06/01/24",
+          "dateFinished": "06/02/24",
+          "usersOnTask": ["user6", "user8"],
+          "taskDescription": "Task Description for Task 21",
+          "verified": true
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "06/01/24",
+          "dateFinished": "19/02/24",
+          "usersOnTask": ["user6", "user7"],
+          "taskDescription": "Task Description for Task 22",
+          "verified": false
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "07/02/24",
+          "taskFinishDate": "26/02/24",
+          "usersOnTask": ["user6", "user7", "user8"],
+          "taskDescription": "Task Description for Task 23",
+          "taskCompletionStatus": 0.8
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user7", "user8"],
+          "taskDescription": "Task Description for Task 24",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 7,
+    "startDate": "07/01/2024",
+    "finishDate": "07/03/2024",
+    "projectName": "Project Name 7",
+    "projectCreator": "user7",
+    "projectUsers": ["user7", "user8", "user9"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 7",
+    "githubLink": "https://github.com/exampleuser/exampleproject7",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "07/01/24",
+          "dateFinished": "07/02/24",
+          "usersOnTask": ["user7", "user9"],
+          "taskDescription": "Task Description for Task 25",
+          "verified": false
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "07/01/24",
+          "dateFinished": "20/02/24",
+          "usersOnTask": ["user7", "user8"],
+          "taskDescription": "Task Description for Task 26",
+          "verified": true
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "08/02/24",
+          "taskFinishDate": "27/02/24",
+          "usersOnTask": ["user7", "user8", "user9"],
+          "taskDescription": "Task Description for Task 27",
+          "taskCompletionStatus": 0.7
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user8", "user9"],
+          "taskDescription": "Task Description for Task 28",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 8,
+    "startDate": "08/01/2024",
+    "finishDate": "08/03/2024",
+    "projectName": "Project Name 8",
+    "projectCreator": "user8",
+    "projectUsers": ["user8", "user9", "user10"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 8",
+    "githubLink": "https://github.com/exampleuser/exampleproject8",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "08/01/24",
+          "dateFinished": "08/02/24",
+          "usersOnTask": ["user8", "user10"],
+          "taskDescription": "Task Description for Task 29",
+          "verified": true
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "08/01/24",
+          "dateFinished": "21/02/24",
+          "usersOnTask": ["user8", "user9"],
+          "taskDescription": "Task Description for Task 30",
+          "verified": false
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "09/02/24",
+          "taskFinishDate": "28/02/24",
+          "usersOnTask": ["user8", "user9", "user10"],
+          "taskDescription": "Task Description for Task 31",
+          "taskCompletionStatus": 0.6
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user9", "user10"],
+          "taskDescription": "Task Description for Task 32",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 9,
+    "startDate": "09/01/2024",
+    "finishDate": "09/03/2024",
+    "projectName": "Project Name 9",
+    "projectCreator": "user9",
+    "projectUsers": ["user9", "user10", "user11"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 9",
+    "githubLink": "https://github.com/exampleuser/exampleproject9",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "09/01/24",
+          "dateFinished": "09/02/24",
+          "usersOnTask": ["user9", "user11"],
+          "taskDescription": "Task Description for Task 33",
+          "verified": false
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "09/01/24",
+          "dateFinished": "22/02/24",
+          "usersOnTask": ["user9", "user10"],
+          "taskDescription": "Task Description for Task 34",
+          "verified": true
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "10/02/24",
+          "taskFinishDate": "29/02/24",
+          "usersOnTask": ["user9", "user10", "user11"],
+          "taskDescription": "Task Description for Task 35",
+          "taskCompletionStatus": 0.9
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user10", "user11"],
+          "taskDescription": "Task Description for Task 36",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  },
+  {
+    "liveProjectID": 10,
+    "startDate": "10/01/2024",
+    "finishDate": "10/03/2024",
+    "projectName": "Project Name 10",
+    "projectCreator": "user10",
+    "projectUsers": ["user10", "user11", "user12"],
+    "projectStatus": 1,
+    "projectPercent": 10,
+    "projectDescription": "Project Descripition 10",
+    "githubLink": "https://github.com/exampleuser/exampleproject10",
+    "projectTasks": {
+      "completedTasks": [
+        {
+          "taskID": 1,
+          "dateStarted": "10/01/24",
+          "dateFinished": "10/02/24",
+          "usersOnTask": ["user10", "user12"],
+          "taskDescription": "Task Description for Task 37",
+          "verified": true
+        },
+        {
+          "taskID": 2,
+          "dateStarted": "10/01/24",
+          "dateFinished": "23/02/24",
+          "usersOnTask": ["user10", "user11"],
+          "taskDescription": "Task Description for Task 38",
+          "verified": false
+        }
+      ],
+      "incompleteTasks": [
+        {
+          "taskID": 3,
+          "dateStarted": "11/02/24",
+          "taskFinishDate": "01/03/24",
+          "usersOnTask": ["user10", "user11", "user12"],
+          "taskDescription": "Task Description for Task 39",
+          "taskCompletionStatus": 0.8
+        },
+        {
+          "taskID": 4,
+          "dateStarted": "N/A",
+          "taskFinishDate": "N/A",
+          "usersOnTask": ["user11", "user12"],
+          "taskDescription": "Task Description for Task 40",
+          "taskCompletionStatus": 0
+        }
+      ]
+    }
+  }
+]

@@ -1,17 +1,19 @@
 "use client";
-import React, { FormEvent, FunctionComponent, use } from "react";
-import loginData from "../data/users.json";
+import React, { FormEvent, FunctionComponent } from "react";
+import loginData from "../data/users/all_users.json";
 import loginFunc from "./formserver";
+import { User } from "../common_components/interfaces";
 
 interface LoginFormProps {
   login: boolean;
   elementArray: string[];
 }
-
+// Elemennt for the form to login or signup. 'login' is set to true when the user is logging in and true when it is a signup. 'elementArray' takes in an array of elements that are being evaluated like 'email' and 'password'.
 const LoginForm: FunctionComponent<LoginFormProps> = ({
   login,
   elementArray,
 }) => {
+  // Maps all the different forms for the different elements into one final form
   const formElement = (arrayOfFormElements: string[]) => {
     return arrayOfFormElements.map((formElement) => {
       return (
@@ -27,16 +29,16 @@ const LoginForm: FunctionComponent<LoginFormProps> = ({
     });
   };
 
+  // The login function to validate the users credentials
   const onLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Gets the form ata
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
 
-    console.log(data);
-
     for (const key in loginData["users"]) {
-      const user = loginData["users"][key];
+      const user = loginData["users"][key] as User;
       console.log(`username: ${user.username}\nemail: ${user.email}`);
       if (
         user.username == data["username or email"] ||
@@ -61,6 +63,7 @@ const LoginForm: FunctionComponent<LoginFormProps> = ({
       username: string;
       email: string;
       password: string;
+      id?: number;
     }
 
     const formData = new FormData(e.currentTarget);

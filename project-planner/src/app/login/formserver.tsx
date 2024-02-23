@@ -1,21 +1,14 @@
 "use server";
 import { readFile, writeFile } from "fs/promises";
 import { redirect } from "next/navigation";
-
-interface User {
-  id?: number;
-  username?: string;
-  password: string;
-  email?: string;
-}
+import { User } from "../common_components/interfaces";
 
 async function loginFunc(newData: User, fromSignUp: boolean) {
   // Read the JSON file
 
-  const filePath =
-    "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/users.json";
+  const filePath = "/src/app/data/users/all_users.json";
 
-  readFile(filePath, "utf-8")
+  readFile(process.cwd() + filePath, "utf-8")
     .then((allUsersData) => {
       const jsonData: {
         users: User[];
@@ -39,7 +32,7 @@ async function loginFunc(newData: User, fromSignUp: boolean) {
       }
 
       writeFile(
-        "/Users/bazos/Documents/github/project_planner/project-planner/src/app/data/current_session.json",
+        process.cwd() + "/src/app/data/users/current_session.json",
         JSON.stringify({ session: true, id: finalData["id"] }, null, 2),
         "utf-8"
       );

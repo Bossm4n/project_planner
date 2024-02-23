@@ -1,5 +1,5 @@
 import React from "react";
-import projectListingCategories from "../data/project_listing_categories.json";
+import projectListingCategories from "../../data/project_data/project_listing_categories.json";
 
 function convertToTitleCase(str: string) {
   // Split the string by underscores and capitalize each word
