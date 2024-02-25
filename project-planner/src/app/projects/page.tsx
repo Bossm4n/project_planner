@@ -3,35 +3,15 @@ import React from "react";
 import Navbar from "../common_components/navbar";
 import Link from "next/link";
 import { readFile } from "fs/promises";
-import {
-  LiveProject,
-  User,
-  ActiveSession,
-} from "../common_components/interfaces";
+import { LiveProject, User } from "../common_components/interfaces";
+import { CheckActiveSession } from "../common_components/server_functions";
 
 const Projects = async () => {
-  const activeSessionFile = "/src/app/data/users/current_session.json";
-
-  let activeSession: boolean = true;
-  let currUserID: number;
-
-  await readFile(process.cwd() + activeSessionFile, "utf-8")
-    .then((json) => JSON.parse(json))
-    .then((activeSessionJSON: ActiveSession) => {
-      if (activeSessionJSON.session == false) activeSession = false;
-      else currUserID = activeSessionJSON.id;
-      console.log("active session: " + activeSession);
-    })
-    .catch((error) => console.error("Error: " + error));
-
-  if (!activeSession) {
-    return (
-      <div>
-        <Navbar />
-        Error 404
-      </div>
-    );
-  }
+  // Check if a user is logged in
+  const checkActiveSessionResult = await CheckActiveSession();
+  if (typeof checkActiveSessionResult !== "number")
+    return checkActiveSessionResult;
+  const currUserID: number = checkActiveSessionResult;
 
   const allUsersFile = "/src/app/data/users/all_users.json";
 
@@ -134,6 +114,7 @@ const Projects = async () => {
       <div className="h-24 w-screen flex items-center justify-center border border-black mt-2">
         <div className="text-center text-3xl">My Projects</div>
       </div>
+      <Link href={"projects/listed-projects"}>Listed Projects</Link>
 
       {/* Current Projects */}
       <div className="flex flex-row mt-3 justify-around">{yo()}</div>

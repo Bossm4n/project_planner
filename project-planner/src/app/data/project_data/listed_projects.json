@@ -8,10 +8,8 @@
       "civil_engineering",
       "architecture"
     ],
-    "id": 1,
-    "usersApplied": [
-      "11"
-    ],
+    "listedProjectID": 1,
+    "usersApplied": ["11", "3", "8"],
     "projectCreatorID": 1
   },
   {
@@ -22,10 +20,8 @@
       "data_science",
       "mechanical_engineering"
     ],
-    "id": 2,
-    "usersApplied": [
-      "11"
-    ],
+    "listedProjectID": 2,
+    "usersApplied": ["11"],
     "projectCreatorID": 1
   },
   {
@@ -36,7 +32,7 @@
       "web_development",
       "data_science"
     ],
-    "id": 3,
+    "listedProjectID": 3,
     "usersApplied": [],
     "projectCreatorID": 1
   },
@@ -48,18 +44,15 @@
       "civil_engineering",
       "architecture"
     ],
-    "id": 4,
+    "listedProjectID": 4,
     "usersApplied": [],
     "projectCreatorID": 1
   },
   {
     "projectTitle": "Healthcare Monitoring Wearable Technology",
     "projectDescription": "Design and prototype a wearable device equipped with sensors for real-time health monitoring, aiming to revolutionize personal healthcare management and early disease detection.",
-    "projectCategories": [
-      "electrical_engineering",
-      "biomedical_engineering"
-    ],
-    "id": 5,
+    "projectCategories": ["electrical_engineering", "biomedical_engineering"],
+    "listedProjectID": 5,
     "usersApplied": [],
     "projectCreatorID": 1
   },
@@ -72,21 +65,21 @@
       "supply_chain_management",
       "data_security"
     ],
-    "id": 6,
+    "listedProjectID": 6,
     "usersApplied": [],
     "projectCreatorID": 1
   },
   {
-    "projectTitle": "Cool projcet title 7",
-    "projectDescription": "dsdga skg;apbgu9bwpwebgipwabgilhawvgioaweghvewlgwaligvskldvhslak",
+    "projectTitle": "Crypto Trading Project",
+    "projectDescription": "The Cryptocurrency Trading Bot project aims to create an automated system that trades cryptocurrencies across exchanges using historical data, technical indicators, and machine learning. Users can customize trading parameters, manage risk, and optimize strategies to maximize profits and minimize losses.",
     "projectCategories": [
       "software_engineering",
-      "architecture",
-      "mechanical_engineering",
-      "electrical_engineering"
+      "data_science",
+      "data_analysis",
+      "machine_learning"
     ],
-    "id": 7,
-    "usersApplied": [],
-    "projectCreatorID": 1
+    "projectCreatorID": 5,
+    "listedProjectID": 8,
+    "usersApplied": []
   }
 ]

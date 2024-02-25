@@ -51,5 +51,7 @@ export interface ProjectListing {
   projectTitle: string;
   projectDescription: string;
   projectCategories: string[];
-  id?: number;
+  listedProjectID?: number;
+  projectCreatorID: number;
+  usersApplied: number[];
 }

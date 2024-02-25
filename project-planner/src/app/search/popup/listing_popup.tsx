@@ -1,13 +1,33 @@
 import React from "react";
 import DropdownClient from "./dropdownclient";
 import { readFile, writeFile } from "fs/promises";
-import { ProjectListing } from "@/app/common_components/interfaces";
+import {
+  ProjectListing,
+  ActiveSession,
+} from "@/app/common_components/interfaces";
 
 const ListingPopUp = async () => {
   async function formAction(popupFormData: FormData) {
     "use server";
 
     // For efficiency in the long run load in all the data categories here, instead of loading it before the adding it to the hidden input then loading it again though getting the form data
+
+    const currentSessionFile = "/src/app/data/users/current_session.json";
+
+    let currProjectCreatorID: number | undefined = undefined;
+
+    await readFile(process.cwd() + currentSessionFile, "utf-8")
+      .then((currentSessionJSON) => JSON.parse(currentSessionJSON))
+      .then((currentSession: ActiveSession) => {
+        currProjectCreatorID = currentSession.id;
+      })
+      .catch((error) => {
+        console.error(error);
+        console.log(
+          "Error reading current session file, project creation failed."
+        );
+        return;
+      });
 
     const newProjectData: ProjectListing = {
       projectTitle: popupFormData.get("title")?.toString() as string,
@@ -18,10 +38,12 @@ const ListingPopUp = async () => {
         .get("dropdownData")
         ?.toString()
         .split(",") as string[],
+      projectCreatorID: currProjectCreatorID as unknown as number,
+      usersApplied: [],
     };
 
     const projectListingsFile =
-      "/src/app/data/projects_data/listed_projects.json";
+      "/src/app/data/project_data/listed_projects.json";
 
     readFile(process.cwd() + projectListingsFile, "utf-8")
       .then((allProjectListingsData) => {
@@ -50,13 +72,19 @@ const ListingPopUp = async () => {
           return true;
         });
 
+        const projectDescriptionLength: number =
+          newProjectData.projectDescription?.length;
+
+        console.log("Project description length: " + projectDescriptionLength);
+
         if (
           !invalidDescription &&
-          newProjectData.projectDescription?.length != undefined &&
-          (newProjectData.projectDescription.length >= 200 ||
-            newProjectData.projectDescription.length <= 30)
+          projectDescriptionLength != undefined &&
+          (projectDescriptionLength >= 350 || projectDescriptionLength <= 30)
         ) {
-          console.log("Invalid Project description");
+          const errorMessage =
+            projectDescriptionLength <= 30 ? "Too short" : "Too long";
+          console.log("Invalid Project description: " + errorMessage);
           invalidDescription = true;
         }
 
@@ -74,19 +102,22 @@ const ListingPopUp = async () => {
         }
 
         const newID: number =
-          (allProjectListings[allProjectListings.length - 1]?.id as number) + 1;
+          (allProjectListings[allProjectListings.length - 1]
+            ?.listedProjectID as number) + 1;
 
-        newProjectData.id = newID;
+        newProjectData.listedProjectID = newID;
+
+        console.log("New project dataID: " + newID);
 
         allProjectListings.push(newProjectData);
 
-        console.log(allProjectListings);
+        console.log(allProjectListings[allProjectListings.length - 1]);
 
-        writeFile(
-          process.cwd() + projectListingsFile,
-          JSON.stringify(allProjectListings, null, 2),
-          "utf-8"
-        );
+        // writeFile(
+        //   process.cwd() + projectListingsFile,
+        //   JSON.stringify(allProjectListings, null, 2),
+        //   "utf-8"
+        // );
       })
       .catch((error) => console.error(error));
 

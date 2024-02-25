@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Navbar from "../common_components/navbar";
 import Link from "next/link";
 import { readFile } from "fs/promises";
-import { User } from "../common_components/interfaces";
+import { User, LiveProject } from "../common_components/interfaces";
 
 const Profile = async ({ params }: { params: { user: string } }) => {
   const allUsersFile = "/src/app/data/users/all_users.json";
@@ -39,7 +39,7 @@ const Profile = async ({ params }: { params: { user: string } }) => {
 
   console.log(currentUser);
 
-  const previousProjectsHTML = () => {
+  const previousProjectsHTML = async () => {
     if (
       currentUser?.previousProjects == undefined ||
       currentUser?.previousProjects.length == 0
@@ -47,11 +47,38 @@ const Profile = async ({ params }: { params: { user: string } }) => {
       return <></>;
     } else {
       const previousProjectsHTMLArray: ReactNode[] = [];
-      currentUser?.previousProjects.forEach((project) => {
+      const activeProjectsFile =
+        "/src/app/data/project_data/active_projects.json";
+
+      let activeProjects: LiveProject[] = [];
+
+      await readFile(process.cwd() + activeProjectsFile, "utf-8")
+        .then((json) => JSON.parse(json))
+        .then((activeProjectsJSON: LiveProject[]) => {
+          activeProjects = activeProjectsJSON.filter((activeProject) =>
+            currentUser?.previousProjects?.includes(activeProject.liveProjectID)
+          );
+        })
+        .catch((error) => console.error("Error: " + error));
+
+      console.log(activeProjects);
+
+      activeProjects.forEach((project) => {
+        const projectName = project.projectName
+          .replace(/\s+/g, "_")
+          .toLowerCase();
+
         previousProjectsHTMLArray.push(
           <div>
-            <Link href={"projects" + "/" + project.title}>{project.title}</Link>
-            <div>{project.shortDescription}</div>
+            <Link
+              href={{
+                pathname: `projects/${projectName}`,
+                query: { projectID: project.liveProjectID },
+              }}
+            >
+              {project.projectName}
+            </Link>
+            <div>{project.projectDescription}</div>
           </div>
         );
       });

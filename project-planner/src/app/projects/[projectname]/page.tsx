@@ -19,9 +19,10 @@ const Project = async ({
       return activeProjects;
     })
     .then((activeProjectsJSON) => {
+      if (searchParams.projectID == undefined) return;
       const selectedProject = activeProjectsJSON.find(
         (project) =>
-          project.liveProjectID.toString() == searchParams.projectID.toString()
+          project.liveProjectID?.toString() == searchParams.projectID.toString()
       );
       currProject = selectedProject;
     })
